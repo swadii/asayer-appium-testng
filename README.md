@@ -1,14 +1,20 @@
-# asayer-appium-testng
-Sample code for Appium TestNG with Asayer
+# Appium/TestNG
+Appium/TestNG(Java) integration with Asayer
 
 ## I) Prepare your Java project
 
-### 1- Create a new maven project
-[screenshot]
-### 2- Click "next" twice then give your project a Group ID and Artifact ID
+### 1- Create a new Maven project
+Use your IDE to create a new project, select "Maven" as Project Type
+
 [screenshot]
 
-### 3- Open pom.xml and make sure u have <packaging>jar</packaging> packaging as a JAR file and version ends with "-tests"
+### 2- Fellow the IDE instructions to configure your project
+You will need to set a location to your project, a group ID and an artifact ID
+
+[screenshot]
+
+### 3- Verifications
+Open pom.xml and make sure you have the packaging set to "jar" and the version ends with "-tests"
 
     <groupId>AsayerTests</groupId>
     <artifactId>MyFirstTestWithAsayer</artifactId>
@@ -16,6 +22,8 @@ Sample code for Appium TestNG with Asayer
     <packaging>jar</packaging>
 
 ### 2- Add these plugins
+Using your editor, modify "pom.xml" to add these plugins
+
     <build>
       <plugins>
         <plugin>
@@ -80,7 +88,8 @@ Sample code for Appium TestNG with Asayer
     </build>
 
 
-### 3- Add this dependencies
+### 3- Dependencies
+You will need to add these dependecies to be able to use Appium and TestNG framework.
 
     <dependencies>
   	  <dependency>
@@ -98,12 +107,14 @@ Sample code for Appium TestNG with Asayer
     </dependencies>
     
 ### 4- Download the JAR and included in your project
-
+You can download the jar file from here.
+Then you should include this jar file to the project:
 Right click in your project name -> Properties -> Java Build Path -> Add External JARs
 
 [screenshot]
 
-### 5- Add a file "zip.xml" under src/main/assembly (you need to create assembly folder) with this code
+### 5- Assembly file
+Add a file "zip.xml" under src/main/assembly (you need to create assembly folder) with the code bellow
 
     <assembly
         xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
@@ -133,6 +144,8 @@ Right click in your project name -> Properties -> Java Build Path -> Add Externa
     </assembly>
 
 ## II) Create your first test
+Create a new Class "FirstTest" with the code bellow.
+This code opens the app and do a "shake gesture"
 
     import java.io.File;
     import java.net.MalformedURLException;
@@ -185,13 +198,11 @@ Right click in your project name -> Properties -> Java Build Path -> Add Externa
     }
 
 
-
-
 ## III) Update and Build with maven
 
     mvn clean package -DskipTests=true
 
-or use your IDE
+You can use your IDE to build the project:
 
 Right click in your project name -> maven -> Update Project
 then
@@ -202,8 +213,11 @@ Right click in your project name -> Run As -> Maven Build
 The zip file will be found under project_folder/target
 
 
-Upload both of this zip and the application (.apk or .ipa) to S3
-
 ## IV) Execute the binary
+In your terminal go to the lcoation of the binary and execute this command
 
-    ./asayer-real-devices -test-name=FirstTestWithAsayer -device=iphone -api-key=YOUR_API_KEY -app-url=APPLICATION_S3_URL -test-url=ZIP_S3_URL
+    ./asayer-real-devices -test-name=FirstTestWithAsayer -device=iphone -api-key=YOUR_API_KEY -app-path=/path/to/application -test-path=/path/to/zip
+    
+## V) Get results
+After few minutes will get a link to the Asayer's page that include the result of your test.
+
