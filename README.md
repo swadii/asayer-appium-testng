@@ -235,6 +235,8 @@ In your terminal go to the lcoation of the binary and execute this command
 
     ./asayer-real-devices -test-name=FirstTestWithAsayer -device="Apple iPhone 7" -api-key=YOUR_API_KEY -app-path=/path/to/application -test-path=/path/to/zip
     
+Supported devices can be found [here](https://github.com/asayer-io/asayer-appium-testng/blob/master/Devices.md)
+    
 ## V) Get results
 After few minutes will get a link to the Asayer's page that include the result of your test.
 
