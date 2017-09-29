@@ -43,7 +43,8 @@ Open pom.xml and make sure you have the packaging set to "jar" and the version e
 ### 2- Plugins
 Using your editor, modify "pom.xml" to add these plugins
 
-    <build>
+```xml
+    <build>
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -104,13 +105,14 @@ Using your editor, modify "pom.xml" to add these plugins
           </executions>
         </plugin>
       </plugins>
-    </build>
-
+    </build>
+```
 
 ### 3- Dependencies
 You will need to add these dependecies to be able to use Appium and TestNG framework.
 
-    <dependencies>
+```xml
+    <dependencies>
   	  <dependency>
 	      <groupId>org.testng</groupId>
 	      <artifactId>testng</artifactId>
@@ -124,16 +126,19 @@ You will need to add these dependecies to be able to use Appium and TestNG frame
 	      <version>4.1.2</version>
 	    </dependency>
     </dependencies>
-    
+```    
 ### 4- Asayer Drivers JAR
 Use the mvn command to include the Asayer Drivers JAR into your project
 
-    mvn install:install-file -Dfile=/path/to/jar  -DgroupId=asayer -DartifactId=asayer-devicelab -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
+```bash
+    mvn install:install-file -Dfile=/path/to/jar  -DgroupId=asayer -DartifactId=asayer-devicelab -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
+```
 
 ### 5- Assembly file
 Add a file "zip.xml" under src/main/assembly (you need to create assembly folder) with the code bellow
 
-    <assembly
+```xml
+    <assembly
         xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
@@ -158,13 +163,15 @@ Add a file "zip.xml" under src/main/assembly (you need to create assembly folder
           </includes>
         </fileSet>
       </fileSets>
-    </assembly>
+    </assembly>
+```
 
 ## II) Create your first test
 Create a new Class "FirstTest" with the code bellow.
 This code opens the app and do a "shake gesture"
 
-    import java.io.File;
+```java
+    import java.io.File;
     import java.net.MalformedURLException;
     import java.net.URL;
     import java.util.concurrent.TimeUnit;
@@ -212,12 +219,14 @@ This code opens the app and do a "shake gesture"
     	public void afterMethod() {
     		driver.quit();
     	}
-    }
-
+    }
+```
 
 ## III) Update and Build with maven
 
-    mvn clean package -DskipTests=true
+```bash
+    mvn clean package -DskipTests=true
+```
 
 You can use your IDE to build the project:
 
@@ -233,8 +242,10 @@ The zip file will be found under project_folder/target
 ## IV) Execute the binary
 In your terminal go to the lcoation of the binary and execute this command
 
-    ./asayer-real-devices -test-name=FirstTestWithAsayer -device="Apple iPhone 7" -api-key=YOUR_API_KEY -app-path=/path/to/application -test-path=/path/to/zip
-    
+```bash
+    ./asayer-devicelab -test-name=FirstTestWithAsayer -device="Apple iPhone 7" -api-key=YOUR_API_KEY -app-path=/path/to/application -test-path=/path/to/zip
+```
+
 Supported devices can be found [here](https://github.com/asayer-io/asayer-appium-testng/blob/master/Devices.md)
     
 ## V) Get results
