@@ -17,7 +17,7 @@ Appium/TestNG(Java) integration with Asayer
 
 
 ### JAR
-[Asayer Drivers JAR](https://s3.eu-central-1.amazonaws.com/asayer-devicelab/)
+[Asayer Drivers JAR](https://s3.eu-central-1.amazonaws.com/asayer-devicelab/asayer-testing-real-devices.jar)
 
 
 ## I) Prepare your Java project
@@ -128,9 +128,8 @@ You will need to add these dependecies to be able to use Appium and TestNG frame
 ### 4- Download the JAR and included in your project
 You can download the jar file from here.
 Then you should include this jar file to the project:
-Right click in your project name -> Properties -> Java Build Path -> Add External JARs
 
-[screenshot]
+    mvn install:install-file -Dfile=/path/to/jar  -DgroupId=asayer -DartifactId=asayer-devicelab -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
 
 ### 5- Assembly file
 Add a file "zip.xml" under src/main/assembly (you need to create assembly folder) with the code bellow
