@@ -1,6 +1,24 @@
 # Appium/TestNG
 Appium/TestNG(Java) integration with Asayer
 
+## Downloads
+### Binary
+[link Linux 32](https://s3.eu-central-1.amazonaws.com/asayer-devicelab/asayer-devicelab-linux32)
+
+[link Linux 64](https://s3.eu-central-1.amazonaws.com/asayer-devicelab/asayer-devicelab-linux64)
+
+[link macOS 32](https://s3.eu-central-1.amazonaws.com/asayer-devicelab/asayer-devicelab-macos32)
+
+[link macOS 64](https://s3.eu-central-1.amazonaws.com/asayer-devicelab/asayer-devicelab-macos64)
+
+[link Windows 32](https://s3.eu-central-1.amazonaws.com/asayer-devicelab/asayer-devicelab-win32.exe)
+
+[link Windows 64](https://s3.eu-central-1.amazonaws.com/asayer-devicelab/asayer-devicelab-win64.exe)
+
+
+### JAR
+
+
 ## I) Prepare your Java project
 
 ### 1- Create a new Maven project
