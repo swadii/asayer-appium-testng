@@ -216,7 +216,7 @@ The zip file will be found under project_folder/target
 ## IV) Execute the binary
 In your terminal go to the lcoation of the binary and execute this command
 
-    ./asayer-real-devices -test-name=FirstTestWithAsayer -device=iphone -api-key=YOUR_API_KEY -app-path=/path/to/application -test-path=/path/to/zip
+    ./asayer-real-devices -test-name=FirstTestWithAsayer -device="Apple iPhone 7" -api-key=YOUR_API_KEY -app-path=/path/to/application -test-path=/path/to/zip
     
 ## V) Get results
 After few minutes will get a link to the Asayer's page that include the result of your test.
