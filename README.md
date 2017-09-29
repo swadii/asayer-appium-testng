@@ -25,12 +25,17 @@ Appium/TestNG(Java) integration with Asayer
 ### 1- Create a new Maven project
 Use your IDE to create a new project, select "Maven" as Project Type
 
-[screenshot]
+<p align="center">
+<img src="https://s3.eu-central-1.amazonaws.com/asayer-documentation-screenshots/1.png" width=400/>
+</p>
 
 ### 2- Fellow the IDE instructions to configure your project
 You will need to set a location to your project, a group ID and an artifact ID
 
-[screenshot]
+<p align="center">
+<img src="https://s3.eu-central-1.amazonaws.com/asayer-documentation-screenshots/2.png" width=400/>
+</p>
+
 
 ### 3- Verifications
 Open pom.xml and make sure you have the packaging set to "jar" and the version ends with "-tests"
@@ -236,7 +241,9 @@ Right click in your project name -> maven -> Update Project
 then
 Right click in your project name -> Run As -> Maven Build
 
-[screenshot]
+<p align="center">
+<img src="https://s3.eu-central-1.amazonaws.com/asayer-documentation-screenshots/3.png" width=400/>
+</p>
 
 The zip file will be found under project_folder/target
 
