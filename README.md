@@ -40,7 +40,7 @@ Open pom.xml and make sure you have the packaging set to "jar" and the version e
     <version>0.0.1-tests</version>
     <packaging>jar</packaging>
 
-### 2- Add these plugins
+### 2- Plugins
 Using your editor, modify "pom.xml" to add these plugins
 
     <build>
@@ -125,9 +125,8 @@ You will need to add these dependecies to be able to use Appium and TestNG frame
 	    </dependency>
     </dependencies>
     
-### 4- Download the JAR and included in your project
-You can download the jar file from here.
-Then you should include this jar file to the project:
+### 4- Asayer Drivers JAR
+Use the mvn command to include the Asayer Drivers JAR into your project
 
     mvn install:install-file -Dfile=/path/to/jar  -DgroupId=asayer -DartifactId=asayer-devicelab -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
 
