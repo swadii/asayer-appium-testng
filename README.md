@@ -107,7 +107,7 @@ Using your editor, modify "pom.xml" to add these plugins
       </executions>
     </plugin>
   </plugins>
-   </build>
+</build>
 ```
 
 ### 3- Dependencies
@@ -221,7 +221,7 @@ public class FirstTest {
 	public void afterMethod() {
 		driver.quit();
 	}
-   }
+}
 ```
 
 ## III) Update and Build with maven
