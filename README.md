@@ -114,13 +114,6 @@ Using your editor, modify "pom.xml" to add these plugins
   </plugins>
 </build>
 ```
-
-### 3- Asayer Drivers JAR
-Use the mvn command to include the Asayer Drivers JAR into your project
-
-```bash
-mvn install:install-file -Dfile=/path/to/jar  -DgroupId=asayer -DartifactId=asayer-devicelab -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
-```
 ### 3- Dependencies
 You will need to add these dependecies to be able to use Appium, TestNG and Asayer classes.
 
@@ -139,14 +132,22 @@ You will need to add these dependecies to be able to use Appium, TestNG and Asay
     <version>4.1.2</version>
   </dependency>
   
-  <dependency>
-    <groupId>asayer</groupId>
-    <artifactId>asayer-devicelab</artifactId>
-    <version>1.0.0</version>
-  </dependency>
+ <dependency>
+   <groupId>asayer</groupId>
+   <artifactId>appium-driver</artifactId>
+   <version>1.0.0</version>
+ </dependency>
+ 
 </dependencies>
 
-```    
+```  
+
+### 4- Asayer Drivers JAR
+Use the mvn command to include the Asayer Drivers JAR into your project
+
+```bash
+mvn install:install-file -Dfile=/path/to/jar  -DgroupId=asayer -DartifactId=asayer-devicelab -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
+```
 
 
 ### 5- Assembly file
